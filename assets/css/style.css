@@ -406,8 +406,8 @@ h6 {
 
 #hero h2 {
   color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 50px;
-  font-size: 25px;
+  margin-bottom: 30px;
+  font-size: 20px;
 }
 
 #hero .btn-get-started {
@@ -450,8 +450,36 @@ h6 {
   color: #3adcae;
 }
 
+@keyframes zoom-in {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* Zoom in */
+  }
+}
+
+@keyframes zoom-out {
+  50% {
+    transform: scale(1.1); /* Zoom in */
+  }
+  100% {
+    transform: scale(1); /* Zoom out */
+  }
+}
+
 #hero .animated {
-  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+  animation: zoom-in-out 4s ease-in-out infinite alternate both;
+}
+
+@keyframes zoom-in-out {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* Zoom in */
+  }
 }
 
 @media (max-width: 991px) {
@@ -633,6 +661,9 @@ section {
 
 .about .content p:last-child {
   margin-bottom: 0;
+}
+.about .content .img {
+  width: 100px;
 }
 
 .about .content .btn-learn-more {
